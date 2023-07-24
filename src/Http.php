@@ -42,7 +42,7 @@ class Http
         return self::response($message, $context, Response::HTTP_BAD_REQUEST);
     }
 
-    public static function badGateway(string $message, array|object|null $context = null)
+    public static function badGateway(string $message = "网关错误", array|object|null $context = null)
     {
         return self::response($message, $context, Response::HTTP_BAD_GATEWAY);
     }
