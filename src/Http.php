@@ -27,9 +27,14 @@ class Http
         return self::response($message, $context);
     }
 
-    public static function created(string $message, array|object|null $context = null)
+    public static function created(string $message = "创建成功", array|object|null $context = null)
     {
         return self::response($message, $context, Response::HTTP_CREATED);
+    }
+
+    public static function updated(string $message = "更新成功", array|object|null $context = null)
+    {
+        return self::response($message, $context, Response::HTTP_OK);
     }
 
     public static function badRequest(string $message, array|object|null $context = null)
