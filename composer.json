@@ -5,6 +5,7 @@
             "Createlinux\\HttpResponse\\": "src/"
         }
     },
+    "license": "MIT",
     "authors": [
         {
             "name": "孟小成",
