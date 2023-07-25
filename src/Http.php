@@ -47,6 +47,11 @@ class Http
         return self::response($message, $context, Response::HTTP_BAD_GATEWAY);
     }
 
+    public static function notFound(string $message = "资源不存在", array|object|null $context = null)
+    {
+        return self::response($message, $context, Response::HTTP_NOT_FOUND);
+    }
+
     public static function deleted(string $message = "删除成功", array|object|null $context = null)
     {
         return self::response($message, $context, Response::HTTP_OK);
