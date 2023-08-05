@@ -62,8 +62,24 @@ class Http
         return self::response($message, $context, Response::HTTP_FORBIDDEN);
     }
 
+    /**
+     * 未登录
+     * @param string $message
+     * @param array|object|null $context
+     * @return Response
+     */
     public static function unauthorized(string $message = "未登录", array|object|null $context = null)
     {
         return self::response($message, $context, Response::HTTP_UNAUTHORIZED);
+    }
+
+    /**
+     * @return Response
+     */
+    public static function session(string $litchiUnifiedToken, string $message = "创建成功"): Response
+    {
+        return self::created($message, [
+            'litchiUnifiedToken' => $litchiUnifiedToken
+        ]);
     }
 }
