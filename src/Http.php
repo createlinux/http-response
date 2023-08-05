@@ -76,10 +76,11 @@ class Http
     /**
      * @return Response
      */
-    public static function session(string $litchiUnifiedToken, string $message = "创建成功"): Response
+    public static function session(string $unifiedToken, string $redirectURI, string $message = "创建成功"): Response
     {
         return self::created($message, [
-            'litchiUnifiedToken' => $litchiUnifiedToken
+            'unified_token' => $unifiedToken,
+            'redirect_uri' => $redirectURI
         ]);
     }
 }
