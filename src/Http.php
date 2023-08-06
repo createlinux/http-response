@@ -76,10 +76,10 @@ class Http
     /**
      * @return Response
      */
-    public static function session(string $session_id, string $message = "登录成功"): Response
+    public static function session(string $accessToken, string $message = "登录成功"): Response
     {
         return self::created($message, [
-            'session_id' => $session_id
+            'access_token' => $accessToken
             //'redirect_uri' => $redirectURI
         ]);
     }
