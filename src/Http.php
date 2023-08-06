@@ -76,10 +76,10 @@ class Http
     /**
      * @return Response
      */
-    public static function session(string $unifiedToken, string $message = "创建成功"): Response
+    public static function session(string $session_id, string $message = "登录成功"): Response
     {
         return self::created($message, [
-            'unified_token' => $unifiedToken
+            'session_id' => $session_id
             //'redirect_uri' => $redirectURI
         ]);
     }
