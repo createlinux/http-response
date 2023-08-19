@@ -83,4 +83,11 @@ class Http
             //'redirect_uri' => $redirectURI
         ]);
     }
+
+    public static function plain(string $message = "ok", string $context = '')
+    {
+        return self::response($message, $context, Response::HTTP_OK, [
+            'Content-Type' => 'text/plain'
+        ]);
+    }
 }
