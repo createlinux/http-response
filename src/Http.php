@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 class Http
 {
 
-    protected static function response(string $message, array|object|null $context, int $status = 200, array $headers = [])
+    protected static function response(string $message, array|object|null|string $context, int $status = 200, array $headers = [])
     {
         $body = [
             "message" => $message,
