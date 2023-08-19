@@ -86,7 +86,7 @@ class Http
 
     public static function plain(string $message = "ok", string $context = '')
     {
-        return self::response($message, $context, Response::HTTP_OK, [
+        return new Response($context,Response::HTTP_OK,[
             'Content-Type' => 'text/plain'
         ]);
     }
