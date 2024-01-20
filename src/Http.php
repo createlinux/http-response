@@ -13,6 +13,7 @@ class Http
             "message" => $message,
             "context" => $context
         ];
+        $headers['Content-Type'] = 'application/json;charset=utf-8';
         $bodyJSON = json_encode($body, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
         return (new Response($bodyJSON, $status, $headers));
     }
@@ -86,7 +87,7 @@ class Http
 
     public static function plain(string $message = "ok", string $context = '')
     {
-        return new Response($context,Response::HTTP_OK,[
+        return new Response($context, Response::HTTP_OK, [
             'Content-Type' => 'text/plain'
         ]);
     }
