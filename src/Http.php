@@ -2,7 +2,7 @@
 
 namespace Createlinux\HttpResponse;
 
-use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Http\Response;
 
 class Http
 {
