@@ -96,4 +96,23 @@ class Http
             'Content-Type' => 'text/plain'
         ]);
     }
+
+    /**
+     * @param $list object Illuminate\Contracts\Pagination
+     * @return Response
+     */
+    public static function pagination($list)
+    {
+        return self::success("ok",[
+            'items' => $list->items(),
+            'pagination' => [
+                'pageSize' => $list->perPage(),
+                'total' => $list->total(),
+                'lastPage' => $list->lastPage(),
+                'current' => $list->currentPage(),
+                'position' => ['topLeft', 'bottomLeft'],
+                'size' => 'small'
+            ]
+        ]);
+    }
 }
