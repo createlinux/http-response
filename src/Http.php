@@ -103,7 +103,7 @@ class Http
      */
     public static function pagination($list)
     {
-        return self::success("ok",[
+        return self::success("ok", [
             'items' => $list->items(),
             'pagination' => [
                 'pageSize' => $list->perPage(),
@@ -114,5 +114,18 @@ class Http
                 'size' => 'small'
             ]
         ]);
+    }
+
+    /**
+     *
+     * 服务不可用
+     * @param string $message
+     * @param array|object|null $context
+     * @param $code
+     * @return Response
+     */
+    public static function serviceUnavailable(string $message = "服务暂不可用", array|object|null $context = null, $code = 503): Response
+    {
+        return self::response($message, $context, $code, 503);
     }
 }
