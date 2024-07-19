@@ -6,9 +6,9 @@
  * 获取服务应用的编号
  * @return array|false|string
  */
-function get_service_app_serial_number(): string
+function get_app_serial_number(): string
 {
-    return getenv('SERVICE_APPLICATION_SERIAL_NUMBER');
+    return getenv('APP_SERIAL_NUMBER');
 }
 
 /**
@@ -16,7 +16,7 @@ function get_service_app_serial_number(): string
  * 获取应用名称
  * @return array|false|string
  */
-function get_service_app_name(): string
+function get_app_name(): string
 {
-    return getenv('SERVICE_APPLICATION_NAME');
+    return getenv('APP_NAME');
 }

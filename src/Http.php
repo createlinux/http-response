@@ -12,10 +12,10 @@ class Http
         $body = [
             "message" => $message,
             "context" => $context,
-            "code" => get_service_app_serial_number() . "-" . $code
+            "code" => get_app_serial_number() . "-" . $code
         ];
         $headers['Content-Type'] = 'application/json;charset=utf-8';
-        $headers['Application-Name'] = get_service_app_name();
+        $headers['Application-Name'] = get_app_name();
         $bodyJSON = json_encode($body, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
         return (new Response($bodyJSON, $status, $headers));
     }
