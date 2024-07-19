@@ -18,5 +18,5 @@ function get_service_app_serial_number(): string
  */
 function get_service_app_name(): string
 {
-    return getenv('SERVICE_APPLICATION_SERIAL_NUMBER');
+    return getenv('SERVICE_APPLICATION_NAME');
 }
