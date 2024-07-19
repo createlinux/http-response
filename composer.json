@@ -4,7 +4,8 @@
     "autoload": {
         "psr-4": {
             "Createlinux\\HttpResponse\\": "src/"
-        }
+        },
+        "files": ["src/config.php"]
     },
     "license": "MIT",
     "authors": [
