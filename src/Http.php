@@ -9,10 +9,11 @@ class Http
 
     protected static function response(string $message, array|object|null|string $context, $code, int $status = 200, array $headers = [])
     {
+        $code = get_app_serial_number() ? get_app_serial_number() . "-" . $code : $code;
         $body = [
             "message" => $message,
             "context" => $context,
-            "code" => get_app_serial_number() . "-" . $code
+            "code" => $code
         ];
         $headers['Content-Type'] = 'application/json;charset=utf-8';
         $headers['Application-Name'] = get_app_name();
